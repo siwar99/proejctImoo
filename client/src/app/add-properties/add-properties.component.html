@@ -1,0 +1,89 @@
+<br><br>
+<br><br>
+<div class="container-sm">
+    <div class="col-md-6 offset-md-3  container-sm  mb-5">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" class="row g-3 form-container  container-sm">
+
+            <div class="form-group col-md-6 ">
+                <label><b>Type</b></label>
+                <select id="type" class="form-select" [(ngModel)]="property.type" name="type"
+                    required #type="ngModel" [ngClass]="{ 'is-invalid': f.submitted && type.errors }">
+                    <div *ngIf="f.submitted && type.errors" class="invalid-feedback">
+                        <div *ngIf="type.errors['required']">Type is required</div>
+                    </div>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="Maison">Maison</option>
+                    <option value="Appartement">Apartment</option>
+                    <option value="Terrain">Terrain</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label><b>Bedrooms</b></label>
+                <select id="bedrooms" class="form-select" [(ngModel)]="property.bedrooms" name="bedrooms"
+                    required #bedrooms="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bedrooms.errors }">
+                    <div *ngIf="f.submitted && bedrooms.errors" class="invalid-feedback">
+                        <div *ngIf="bedrooms.errors['required']">Number of bedrooms is required</div>
+                    </div>
+                    <option selected disabled value="">Choose...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><b>Address</b></label>
+                <input type="text" class="form-control" [(ngModel)]="property.adresse" name="adresse" required #adresse="ngModel" [ngClass]="{ 'is-invalid': f.submitted && adresse.errors }">
+                <div *ngIf="f.submitted && adresse.errors" class="invalid-feedback">
+                    <div *ngIf="adresse.errors['required']">Address is required</div>
+                </div>
+            </div>
+            
+            
+            <div class="form-group">
+                <label><b>Price</b></label>
+                <input type="number" class="form-control" [(ngModel)]="property.price" name="price" required #price="ngModel" [ngClass]="{ 'is-invalid': f.submitted && price.errors }">
+                <div *ngIf="f.submitted && price.errors" class="invalid-feedback">
+                    <div *ngIf="price.errors['required']">Price is required</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label><b>Bathrooms</b></label>
+                <input type="number" class="form-control" [(ngModel)]="property.bathrooms" name="bathrooms" required #bathrooms="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bathrooms.errors }">
+                <div *ngIf="f.submitted && bathrooms.errors" class="invalid-feedback">
+                    <div *ngIf="bathrooms.errors['required']">Number of bathrooms is required</div>
+                </div>
+            </div>
+            
+           
+            
+          
+
+            <div class="form-group col-md-6">
+                <label><b>Area (sq ft)</b></label>
+                <input type="number" class="form-control" [(ngModel)]="property.area" name="area"
+                    required #area="ngModel" [ngClass]="{ 'is-invalid': f.submitted && area.errors }">
+                <div *ngIf="f.submitted && area.errors" class="invalid-feedback">
+                    <div *ngIf="area.errors['required']">Area is required</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label><b>Description</b></label>
+                <textarea class="form-control" [(ngModel)]="property.description" name="description"
+                    required #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.errors }"></textarea>
+                <div *ngIf="f.submitted && description.errors" class="invalid-feedback">
+                    <div *ngIf="description.errors['required']">Description is required</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

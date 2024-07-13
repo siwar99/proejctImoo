@@ -1,0 +1,71 @@
+<body>
+    <div class="rdv-search-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="statusFilter">
+          <mat-option value="">All</mat-option>
+          <mat-option value="CONFIRMED">CONFIRMED</mat-option>
+          <mat-option value="CANCELED">CANCELED</mat-option>
+          <mat-option value="PENDING">PENDING</mat-option>
+  
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Property Type</mat-label>
+        <mat-select [(ngModel)]="propertyType">
+          <mat-option value="">All</mat-option>
+          <mat-option value="Appartement">Appartement</mat-option>
+          <mat-option value="Maison">Maison</mat-option>
+          <mat-option value="Terrain">Terrain</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="onDateChange($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <button  color="primary" class="filter" (click)="filterRDVs()">Filter</button>
+    </div>
+    <div class="rdv-table-container">
+          <table mat-table [dataSource]="RDVS" class="mat-elevation-z8">
+        
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell *matCellDef="let rdv"> {{rdv.description}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="dateHeure">
+              <th mat-header-cell *matHeaderCellDef> Date & Time </th>
+              <td mat-cell *matCellDef="let rdv"> {{rdv.dateHeure | date: 'short'}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="statusRDV">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let rdv"> {{rdv.statusRDV}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="propertyType">
+              <th mat-header-cell *matHeaderCellDef> Property Type </th>
+              <td mat-cell *matCellDef="let rdv"> {{rdv.property?.type}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let rdv">
+                <button mat-raised-button color="primary" (click)="updateRDV(rdv.id,'CONFIRMED')">Accept
+                  <mat-icon>check</mat-icon>
+                </button>
+                <button mat-raised-button color="warn" (click)="updateRDV(rdv.id,'REJECTED')">Reject
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+  </body>
+  

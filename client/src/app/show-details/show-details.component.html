@@ -1,0 +1,65 @@
+<br>
+
+<div class="container">
+
+<h3>Property Details</h3>
+<br>
+<div class="box">
+    
+    <div>
+      <img src="../assets/download.jpg">
+    </div>
+<div >
+    <table  class=" table table-striped  border-dark  ">
+        <thead class=" table-dark">        
+        <tr>
+          <th  >Attribute</th>
+          <th  >Value</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+    <tr>
+          <td><b>Id</b></td>
+          <td>{{property.id}}</td>
+        </tr>
+        <tr>
+          <td><b>Address</b></td>
+          <td>{{property.adresse}}</td>
+        </tr>
+        <tr>
+          <td><b>Type</b></td>
+          <td>{{property.type}}</td>
+        </tr>
+        <tr>
+          <td><b>Price</b></td>
+          <td>{{property.price}}</td>
+        </tr>
+        <tr>
+          <td><b>Bedrooms</b></td>
+          <td>{{property.bedrooms}}</td>
+        </tr>
+        <tr>
+          <td><b>Bathrooms</b></td>
+          <td>{{property.bathrooms}}</td>
+        </tr>
+        <tr>
+          <td><b>Area</b></td>
+          <td>{{property.area}}</td>
+        </tr>
+        <tr>
+          <td><b>Description</b></td>
+          <td>{{property.description}}</td>
+        </tr>
+
+    </tbody>    
+      </table>
+
+      <a routerLink="/updating-by-id/{{property.id}}" id="btn1"class="btn btn-secondary">Update Details</a>
+      <a routerLink="/show-all-properties" id="btn2" class="btn btn-danger">Back</a>
+</div>
+    
+</div>
+
+</div>

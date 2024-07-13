@@ -1,0 +1,61 @@
+body{
+    background-image: url(../../../assets/maison.PNG);
+}
+.rdv-table-container {
+    margin: 20px auto;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell {
+    text-align: center;
+  }
+  .mat-mdc-header-cell{
+    text-align: center;
+  }
+  td .mat-cell {
+    text-align: center;
+    justify-content: center;
+    
+  }
+  .mat-mdc-cell{
+    text-align: center;
+  }
+  
+  button {
+    width: 100px;
+    text-align: center;
+    margin-right: 20px;
+  }
+  .rdv-search-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    background-color: aliceblue;
+    width: 800px;
+    margin: 20px;
+    padding: 30px;
+    padding-right: 1px;
+    border-radius: 20px;
+    height: 16%;
+    margin-right: 0px;
+    right: auto;
+    position: relative;
+    left: 300px;
+
+  }
+.filter{
+  height: 55px;
+  width: 30%;
+  background-color: rgb(51, 85, 240);
+  margin-right: 20px;
+  border-radius: 10px;
+  color: antiquewhite;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+}

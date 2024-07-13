@@ -1,0 +1,56 @@
+<body>
+  <div class="property-table-container">
+    <table mat-table [dataSource]="properties" class="mat-elevation-z8" class="tab">
+  
+      <ng-container matColumnDef="adresse">
+        <th mat-header-cell *matHeaderCellDef> Adresse </th>
+        <td mat-cell *matCellDef="let property"> {{property.adresse}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let property"> {{property.type}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let property"> {{property.price}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="bedrooms">
+        <th mat-header-cell *matHeaderCellDef> Bedrooms </th>
+        <td mat-cell *matCellDef="let property"> {{property.bedrooms}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="bathrooms">
+        <th mat-header-cell *matHeaderCellDef> Bathrooms </th>
+        <td mat-cell *matCellDef="let property"> {{property.bathrooms}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="area">
+        <th mat-header-cell *matHeaderCellDef> Area </th>
+        <td mat-cell *matCellDef="let property"> {{property.area}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let property"> {{property.description}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="propertyStatus">
+        <th mat-header-cell *matHeaderCellDef> Property Status </th>
+        <td mat-cell *matCellDef="let property"> {{property.propertyStatus}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let property">
+          <button mat-raised-button color="primary" (click)="addrdv(property.id)">Add RDV</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</body>

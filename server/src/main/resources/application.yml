@@ -1,0 +1,59 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/immoluxedb
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  main:
+    allow-circular-references: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  file:
+    uploads:
+      photos-output-path: ./uploads
+  server:
+    port: 8088
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: "http://localhost:9080/auth/realms/Postarion1"
+
+  security:
+    oauth2:
+      client:
+        authority-mapping:
+          ROLE_USER: ROLE_USER
+          ROLE_ADMIN: ROLE_ADMIN
+
+        provider:
+          oidc:
+            issuer-uri: http://localhost:9080/auth/realms/Postarion1
+            authorization-uri: http://localhost:9080/auth/realms/Postarion1/protocol/openid-connect/auth
+            token-uri: http://localhost:9080/auth/realms/Postarion1/protocol/openid-connect/token
+            user-info-uri: http://localhost:9080/auth/realms/Postarion1/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:9080/auth/realms/Postarion1/protocol/openid-connect/certs
+        registration:
+          oidc:
+            client-id: postarion
+            client-secret:
+            scope: openid, profile, email, offline_access # last one for refresh tokens
+  keycloak:
+    realm: Postarion1
+    resource: postarion
+    auth-server-url: http://localhost:9080/auth
+    credentials:
+      secret:
+    ssl-required: external
+    use-resource-role-mappings: true
+    bearer-only: true
+    public-client: true
+    cors: true
+    principal-attribute: admin

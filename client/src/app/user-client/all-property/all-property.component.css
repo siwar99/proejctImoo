@@ -1,0 +1,32 @@
+body{
+    background-image: url(../../../assets/maison.PNG);
+}
+.property-table-container {
+    margin: 40px auto;
+    max-width: 1200px;
+   
+    border: 1px solid black;
+    width: 100%;
+  }
+  .tab{
+    border-radius: 20px !important;
+  }
+  table {
+    width: 100%;
+    background-color: rgba(234, 238, 241, 0.445);
+    
+    height: 100%;
+  }
+  
+  th.mat-header-cell {
+    text-align: left;
+  }
+  
+  td.mat-cell {
+    text-align: left;
+  }
+  
+  button {
+    width: 180px;
+    text-align: center;
+  }

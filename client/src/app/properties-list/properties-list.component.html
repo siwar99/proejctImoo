@@ -1,0 +1,60 @@
+<br>
+<br>
+<!-- <h1>Property List</h1> -->
+
+<div class="container">
+
+    <div >
+        <form (ngSubmit)="goToProperty()" >
+            <div class="form-group col-md-6 inline ">
+                
+                <input  [(ngModel)]="EnteredID" type="text" class="form-control" id="id" name="id" placeholder="Search by ID">
+                <button class="btn btn-secondary " type="submit">Search</button>
+            </div>
+        </form>
+
+    </div>
+    <br>
+    <br>
+<div>
+<table style="margin-bottom: 50px;" class=" table table-responsive table-striped  border-dark">
+
+    <thead class="table-dark ">
+        <tr>
+            <th>Id</th>
+            <th>Address</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Bedrooms</th>
+            <th>Bathrooms</th>
+            <th>Area</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead> 
+
+
+    <tbody>
+        <tr *ngFor = "let property of properties">
+            <td>{{property.id}}</td>
+            <td>{{property.adresse}}</td>
+            <td>{{property.type}}</td>
+            <td>{{property.price}}</td>
+            <td>{{property.bedrooms}}</td>
+            <td>{{property.bathrooms}}</td>
+            <td>{{property.area}}</td>
+            <td>{{property.description}}</td>
+            <td>
+                <button (click) = "updateProperty(property.id)" class = "btn  btn-secondary btn-sm"> Update</button>
+                <button (click) = "deleteProperty(property.id)" class = "btn btn-danger btn-sm" style="margin-left: 10px"> Delete</button>
+                <button (click) = "detailsOfProperty(property.id)" class = "btn btn-success btn-sm " style="margin-left: 10px"> View</button>
+                <button (click) = "displayRDVList(property.id)" class = "btn btn-info btn-sm " style="margin-left: 10px"> List RDV</button>
+            </td>
+        </tr>
+    </tbody>
+
+
+</table>
+<br><br><br><br>
+</div>

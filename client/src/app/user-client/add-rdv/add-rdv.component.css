@@ -1,0 +1,45 @@
+body{
+    background-image: url(../../../assets/maison.PNG);
+}
+.unavailable-date .mat-calendar-body-cell-content {
+    background-color: #ffcccc !important;
+    color: #ff0000 !important ;
+    pointer-events: none !important;
+  }
+  .dateForm {
+    border: 0.1px solid black;
+    border-radius: 20px;
+    width: 500px !important;
+    margin: 20px auto; 
+    padding: 10px;
+    justify-content: center;
+    text-align: center; 
+    background-color: rgba(234, 238, 241, 0.973);
+  }
+  
+  .submitButton {
+    background-color: rgba(0, 119, 255, 0.836) !important;
+    padding: 10px;
+    color: aliceblue;
+    width: 100% !important;
+    display: block;
+    border-radius: 10px;
+    margin: 20px auto; 
+    text-align: center;
+
+  }
+  mat-form-field{
+    width: 100%;
+  }
+  .form-group {
+    width: 100% !important;
+    margin-bottom: 20px; 
+    padding: 10px 10px;
+  }
+  
+  .alert {
+    color: red;
+    margin-top: 10px;
+  }
+  
+ 
